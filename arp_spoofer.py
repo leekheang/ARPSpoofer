@@ -4,7 +4,7 @@ import sys
 
 target_ip = "192.168.1.189"
 gateway_ip = "192.168.1.1"
-
+#echo 1 > /proc/sys/net/ipv4/ip_forward
 
 def get_mac(ip):
     arp_req = scapy.ARP(pdst = ip)
